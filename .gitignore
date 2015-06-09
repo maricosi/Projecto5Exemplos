@@ -48,3 +48,4 @@ target/
 .classpath
 .settings
 
+/bin/
