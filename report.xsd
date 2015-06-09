@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="report" type="reportType"/>
+
+  <xs:complexType name="metric_dataType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="metric_name"/>
+      <xs:element type="timestampType" name="timestamp"/>
+
+      <xs:element type="xs:float" name="value"/>
+      <xs:element type="xs:string" name="type"/>
+      <xs:element type="xs:string" name="units"/>
+      <xs:element type="xs:string" name="spoof"/>
+      <xs:element type="directionType" name="direction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="timestampType">
+    <xs:restriction base="xs:long">
+      <xs:minExclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="directionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="dgsg|boinc"/>
+      <xs:enumeration value="dgsg|xtremweb"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+
+
+
+
+  <xs:complexType name="reportType">
+    <xs:sequence>
+      <xs:element type="metric_dataType" name="metric_data" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:long" name="timestamp" />
+    <xs:attribute type="xs:string" name="timezone"/>
+    <xs:attribute type="xs:float" name="version"/>
+  </xs:complexType>
+
+
+
+
+
+</xs:schema>
