@@ -66,7 +66,23 @@ public class MetricDataType {
     @XmlSchemaType(name = "string")
     protected DirectionType direction;
 
-    /**
+    public MetricDataType() {
+		super();
+	}
+
+	public MetricDataType(String metricName, long timestamp, float value,
+			String type, String units, String spoof, DirectionType direction) {
+		super();
+		this.metricName = metricName;
+		this.timestamp = timestamp;
+		this.value = value;
+		this.type = type;
+		this.units = units;
+		this.spoof = spoof;
+		this.direction = direction;
+	}
+
+	/**
      * Gets the value of the metricName property.
      * 
      * @return

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportType>
+    <metric_data>
+        <metric_name>Ricardo</metric_name>
+        <timestamp>-2</timestamp>
+        <value>0.2</value>
+        <type>float</type>
+        <units>flops</units>
+        <spoof>spoof</spoof>
+        <direction>dgsg|boinc</direction>
+    </metric_data>
+    <metric_data>
+        <metric_name>Marisa</metric_name>
+        <timestamp>156789123</timestamp>
+        <value>0.2</value>
+        <type>float</type>
+        <units>flops</units>
+        <spoof>spoof</spoof>
+        <direction>dgsg|boinc</direction>
+    </metric_data>
+</reportType>
