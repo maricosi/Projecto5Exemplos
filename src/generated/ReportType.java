@@ -45,7 +45,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "reportType", propOrder = {
     "metricData"
 })
-@XmlRootElement(name="reportType")
+@XmlRootElement(name="report")
 public class ReportType {
 
     @XmlElement(name = "metric_data")

@@ -17,11 +17,20 @@ import java.io.OutputStream;
 
 
 
+
+
+
+
+import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+
+import org.xml.sax.SAXException;
 
 
 
@@ -37,10 +46,15 @@ public class Unmarshall {
 
 
 	public static <T> T unmarshal( Class<T> docClass, InputStream inputStream )
-			throws JAXBException {
+			throws JAXBException, SAXException {
 		String packageName = docClass.getPackage().getName();
 		JAXBContext jc = JAXBContext.newInstance( packageName );
 		Unmarshaller u = jc.createUnmarshaller();
+		
+		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		Schema schema = schemaFactory.newSchema(new File("report.xsd")); 
+		u.setSchema(schema);
+		
 		@SuppressWarnings("unchecked")
 		JAXBElement<T> doc = (JAXBElement<T>)u.unmarshal( inputStream );
 		return doc.getValue();
@@ -57,11 +71,14 @@ public class Unmarshall {
 		ObjectFactory factory = new ObjectFactory();
 		ReportType report = factory.createReportType();
 
-		report.getMetricData().add(new MetricDataType("Ricardo",-2,0.2f,"float","flops","spoof",DirectionType.DGSG_BOINC));
+		report.getMetricData().add(new MetricDataType("Ricardo",2,0.2f,"float","flops","spoof",DirectionType.DGSG_BOINC));
 		report.getMetricData().add(new MetricDataType("Marisa",156789123,0.2f,"float","flops","spoof",DirectionType.DGSG_BOINC));
 		
-
+		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		Schema schema = schemaFactory.newSchema(new File("report.xsd")); 
+		
 		Marshaller m = jc.createMarshaller();
+		m.setSchema(schema);
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE );
 
 		// Write the XML File
