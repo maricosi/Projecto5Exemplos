@@ -8,7 +8,7 @@ import generated.ReportType;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -23,7 +23,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import com.sun.org.apache.xml.internal.utils.XMLCharacterRecognizer;
+
 
 public class Unmarshall {
 	public static void main(String[] args) throws Exception {
