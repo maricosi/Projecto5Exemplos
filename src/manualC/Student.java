@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name="student", propOrder={"name","age"})
 public class Student {
 	
+	@XmlAttribute
+	protected String xmlns="";
 	@XmlElement(required=true)
 	protected String name;
 	@XmlElement(required=true)
