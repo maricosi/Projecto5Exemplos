@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.dei.uc.pt/EAI" xmlns="http://www.dei.uc.pt/EAI"
+attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:include schemaLocation="Student.xsd"/> 
+  
+  <xs:element name="class" type="classType"/>
+
+
+  <xs:complexType name="classType">
+    <xs:sequence>
+      <xs:element type="studentType" name="student" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+
+
+
+</xs:schema>

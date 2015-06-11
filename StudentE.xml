@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="text.xsl" ?>
 <h:class xmlns:h="http://www.dei.uc.pt/EAI">
     <h:student id="201134441110">
         <name>Alberto</name>

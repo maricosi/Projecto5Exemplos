@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.dei.uc.pt/EAI" xmlns="http://www.dei.uc.pt/EAI"
+attributeFormDefault="unqualified" elementFormDefault="unqualified">
+
+  <xs:complexType name="studentType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:int" name="age"/>
+	</xs:sequence>
+	<xs:attribute type="xs:long" name="id" />
+  </xs:complexType>
+
+</xs:schema>
